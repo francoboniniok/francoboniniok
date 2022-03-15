@@ -1,12 +1,13 @@
+import React from 'react';
 import Button from '@mui/material/Button';
 
 
-function NavBar(){
+function NavBar() {
     return(
-        <header>
-        <div className='container-logo'>          
-          <img src='logo192.png' className='img-header'></img>
-        </div>
+        <header className='main-header'>
+          <div className='container-logo'>          
+          <img src='logo-bonini.jpg' className='img-header'></img>
+          </div>
   
           <ul className='navbar'>
             <li><Button variant="contained">Home</Button></li>
@@ -15,8 +16,7 @@ function NavBar(){
             <li><Button variant="contained">Contacto</Button></li>
           </ul>
         </header>
-)
-
+    )
 }
 
 export default NavBar;
