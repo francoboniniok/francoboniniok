@@ -5,6 +5,7 @@ function App() {
   return (
     <div className='App'>
       <Navbar/>
+      <h2>MEJORES ACCESORIOS PARA TU BOTE DE REMO</h2>
 
     </div>
   );
