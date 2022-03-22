@@ -1,11 +1,21 @@
 import './App.css';
-import Navbar from  './components/NavBar';
+import NavBar from  './components/NavBar/NavBar';
+import ListProducts from './components/ListProducts/ListProducts';
+
+
+
+
 
 function App() {
   return (
     <div className='App'>
-      <Navbar/>
-      <h2>MEJORES ACCESORIOS PARA TU BOTE DE REMO</h2>
+
+
+      <NavBar/>
+      <h2>Productos Destacados</h2>
+      <ListProducts/>
+
+      
 
     </div>
   );
