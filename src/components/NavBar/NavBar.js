@@ -3,7 +3,7 @@ import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget'
 
 
-function NavBar() {
+function NavBar(props) {
     return(
         <header className='main-header'>
           <div className='container-logo'>          
