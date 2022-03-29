@@ -1,9 +1,10 @@
 import './Card.css'
 import React,{ useState, useEffect } from 'react'
+import Button from '@mui/material/Button'
 import ItemCount from '../ItemCount/ItemCount'
 
 export default function Card({ data }) {
-    const { title, price, ancho } = data
+    const { title, price, ancho, image, medida } = data
     const [count, setCount ] = useState(1)
 
     const addStock = () => {
@@ -12,13 +13,13 @@ export default function Card({ data }) {
 
     return(
         <div className="card-item">
-            <img src='carro-ruleman.png' alt='carro-ruleman'/>
+            <img src={image} alt='image'/>
 
             <div className='container-card-data'>
             <h2>{title}</h2>
-            <p>Ancho : {ancho}</p>
+            <p>Medida : {medida}</p>
             <p>Precio : $ {price}</p>
-            <ItemCount/>
+            <Button variant='contained'>Comprar</Button>
             </div>
            
         </div>

@@ -25,16 +25,9 @@ function App() {
   return (
     <div className='App'>
       <NavBar/>
-
       <Container className='container-general'>
-        
-      <ListProducts>
-      <h2>Productos Destacados</h2>
-      </ListProducts>
-      
+        <ListProducts/>
       </Container>
-      
-
     </div>
   );
 }
