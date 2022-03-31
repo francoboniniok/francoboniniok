@@ -35,6 +35,7 @@ ul.navbar li {
 }
 .container-general {
   width: 1200px;
+  box-sizing: border-box;
 }
 .container-cards {
   float: left;

@@ -19,7 +19,7 @@ export default function Card({ data }) {
             <h2>{title}</h2>
             <p>Medida : {medida}</p>
             <p>Precio : $ {price}</p>
-            <Button variant='contained'>Comprar</Button>
+            <Button variant='contained'>Ver Detalles</Button>
             </div>
            
         </div>
