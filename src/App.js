@@ -1,37 +1,32 @@
-import React,{useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';
 
 //components
 import NavBar from  './components/NavBar/NavBar';
-import ListProducts from './components/ListProducts/ListProducts';
-import Card from './components/Card/Card';
-import Container from '@mui/material/Container';
-import ItemDetail from './components/ItemDetail/ItemDetail';
+
+//pages
+import HomePage from './pages/Home';
+import ContactPage from './pages/Contact';
+import DetailPage from './pages/Detail';
+
+
 
 
 function App() {
-  const  [open,setOpen] = useState(false);
-  
-  const handleClose = (value) => {
-    setOpen(false);
-  };
-
-  const handleOpen = () => {
-    setOpen(true)
-  }
-
-  useEffect( () => {
-    console.log('Log useEffect')
-  })
 
   return (
-    <div className='App'>
-      <NavBar/>
-        <ItemDetail/>
-      <Container className='container-general'>
-        <ListProducts/>
-      </Container>
+    <div className="App">
+    <BrowserRouter>
+      <NavBar />
+        <Routes>
+        <Route path="/contacto" element={<ContactPage />}/>
+        <Route path="/" element={<HomePage />}/>
+        <Route path="/:category/" element={<HomePage />}/>
+        <Route path="/:category/:id" element={<DetailPage />}/>
       
+      </Routes>
+      <footer></footer>
+    </BrowserRouter>
     </div>
   );
 }

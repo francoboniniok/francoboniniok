@@ -1,64 +1,49 @@
 import React,{useState, useEffect} from 'react'
 import Card from '../Card/Card'
+import mockProductos from '../../Utils/productsMock'
+import { useParams } from 'react-router-dom'
 
 const ListProducts = ({children}) => {
-    
-    const mockProductos = [{
-        id: 1,
-        title : 'Carro de Rulemanes',
-        medida : '230mm',
-        price : 12500,
-        image : 'carro-ruleman.jpg',
-        stock : 5
-    },
+    const { category } = useParams()
+    const [contador, setContador] = useState(0)
 
-    {
-        id: 2,
-        title : 'Zapatillas Para Botes',
-        medida : '45',
-        price : 10000,
-        image : 'zapatillas-bote.jpg',
-        stock : 5
-    },
-    
-    {
-        id: 3,
-        title : 'Horquilla Competicion',
-        medida : 'Remo Corto',
-        price : 4000,
-        image : 'horquilla-remo-corto.jpg',
-        stock : 7
-    }]
+    const [products, setProducts] = useState([])
 
-    const [products, setProducts] = useState([
-    ])
-
-    const getProducts = () =>{
+    const getProducts = () => {
         return new Promise((resolve, reject) => {
-            return resolve (mockProductos)
+            return resolve(mockProductos)
+        })
+    } 
+
+    useEffect( () => {
+        setProducts([])
+        getProducts().then( (productos) => {
+            category ? filterProductByCategory(productos, category) : setProducts(productos)
+        })
+    }, [category])
+
+
+    const filterProductByCategory = (array , category) => {
+        return array.map( (product, i) => {
+            if(product.category === category) {
+               return setProducts(products => [...products, product]);
+            }
         })
     }
 
-    useEffect ( () => {
-        getProducts().then((data) => {
-            setProducts(data)
-        })
-    }, [])
-    
-    return(
-        <div className='container-cards'>
-            <h1>Productos Destacados</h1>
-            <br></br>
-            {products.map( (product) => {
-                const {id} = product
+    const agregarClick = (e, nombre) => {
+        e.stopPropagation()
+        console.log("Nombre desde el hijo:", nombre)
+        setContador(contador + 1)
+    }
 
-                return(
-                    <Card data={product} key={id} />
-                )
-            } )}
+    return(
+        <div className="container-cards">
+            <h2> Productos Destacados </h2>
+            {console.log("products: ", products)}
+            {products.map( ( product ) =>  <Card data={product} key={product.id} action={agregarClick}/>)}
         </div>
-    )
+    ) 
 }
 
 export default ListProducts;
-
