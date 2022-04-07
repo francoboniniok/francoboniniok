@@ -1,7 +1,6 @@
 const mockProductos = [{
-    id: 1,
+    id: '1',
     title : 'Carro de Rulemanes',
-    price : 12500,
     image: "carro-ruleman.jpg",
     description: "Carro con rueda de rulemanes para bote de competición.",
     content: "",
@@ -10,7 +9,7 @@ const mockProductos = [{
 },
 
 {
-    id: 2,
+    id: '2',
     title : 'Zapatillas Para Botes',
     image : 'zapatillas-bote.jpg',
     description : "Zapatillas para bote de competición",
@@ -20,7 +19,7 @@ const mockProductos = [{
 },
 
 {
-    id: 3,
+    id: '3',
     title : 'Horquilla Competicion',
     medida : 'Remo Corto',
     image : 'horquilla-remo-corto.jpg',

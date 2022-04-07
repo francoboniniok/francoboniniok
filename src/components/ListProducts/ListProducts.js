@@ -3,6 +3,7 @@ import Card from '../Card/Card'
 import mockProductos from '../../Utils/productsMock'
 import { useParams } from 'react-router-dom'
 
+
 const ListProducts = ({children}) => {
     const { category } = useParams()
     const [contador, setContador] = useState(0)

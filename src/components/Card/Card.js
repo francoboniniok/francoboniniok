@@ -1,27 +1,28 @@
 import './Card.css'
 import React,{ useState} from 'react'
 import Button from '@mui/material/Button'
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 
 
 export default function Card({ data }) {
-    const { title, price, ancho, image, medida } = data
-    const [count, setCount ] = useState(1)
 
-    const addStock = () => {
-        setCount (count + 1)
+    const navigate = useNavigate();
+    const { title, price, talles, image, medida, id } = data
+
+    const changePage = () => {
+        navigate ('/productos/${id}')
     }
 
     return(
-        <div className="card-item">
+        <div className="card-item" onClick={changePage}>
             <img src={image} alt='image'/>
 
             <div className='container-card-data'>
             <h2>{title}</h2>
-            <p>Medida : {medida}</p>
+            <Button><p>Medida : {talles}</p></Button>
             <p>Precio : $ {price}</p>
-            <Link to={'/:category/:id'}><Button variant='contained'>Ver Detalles</Button></Link>
+            <Button variant='contained'>Ver Detalles</Button>
             </div>
            
         </div>

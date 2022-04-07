@@ -1,5 +1,5 @@
 const mockProducto = {
-    id: 1,
+    id: '1',
     title : 'Carro de Rulemanes',
     price : 12500,
     image: "carro-ruleman.jpg",
