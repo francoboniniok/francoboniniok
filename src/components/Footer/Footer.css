@@ -1,0 +1,21 @@
+.footer {
+    background-color: #008BC6;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    font-size: 20px;
+}
+
+.footer-social{
+    width: 100%;
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-copyright{
+    padding-bottom: 5px;
+    text-align: center;
+}
+

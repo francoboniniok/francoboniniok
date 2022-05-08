@@ -1,21 +1,4 @@
-header.main-header {
-    width: 100%;
-    display: flex;
-    padding: 10px 10px;
-    box-shadow: 1px 5px 15px #81818129;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-  }
-  
-  ul.navbar{
-    width: 100%;
-    list-style: none;
-    justify-content: flex-end;
-    display: flex;
-    
-  }
-  
-  ul.navbar li{
-    margin-right: 10px;
-  }
+header.main-header li button a {
+    text-decoration: none;
+    color: white;
+}

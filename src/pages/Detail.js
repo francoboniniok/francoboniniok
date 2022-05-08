@@ -1,45 +1,49 @@
 import Container from '@mui/material/Container';
+import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import mockProductos from '../Utils/productsMock'
-import '../components/ItemDetail/ItemDetail.css';
-
+import { doc, getDoc } from "firebase/firestore";
+import db from '../firebase'
 
 const DetailPage = () => {
-    const { id, category } = useParams()
+    const { id } = useParams()
+    const navigate = useNavigate()
     const [product, setProduct] = useState({})
+    const getProduct = async() => {
+        const docRef = doc(db, "productos", id);
+        const docSnap = await getDoc(docRef);
 
-    useEffect( () => {
-        filterProductById(mockProductos, id)
-    }, [id])
-
-    const filterProductById = (array , id) => {
-        return array.map( (product) => {
-            if(product.id == id) {
-                return setProduct(product)
-            }
-        })
+        if (docSnap.exists()) {
+            console.log("Document data:", docSnap.data());
+            let product = docSnap.data()
+            product.id = docSnap.id
+            setProduct(product)
+          } else {
+            console.log("No such document!");
+            navigate('/error')
+          }
     }
 
+    useEffect( () => {
+        getProduct()
+    }, [id])
     
     return(
         <Container className='container-general'> 
-            <div className='details'>
-            <div className='big-img'>
-                <img src={`../${product.image}`} alt="" />
+            <div className='container-detail'>
+            <div className='container-detail__img'>
+                <img src={`../${product.image}`} alt="jean" />
             </div>
-            <div className='box'>
-                <div className='row'>
-                <h2>{product.title}</h2>
-                <span>$ {product.price}</span>
-                </div>
-                <div className='anchos'>
-                <Button variant='contained'>{product.talles}</Button>
-                </div>
-                <p>{product.description}</p>
-                <p>{product.content}</p>
-                <Button variant='contained' className='cart'>Agregar al Carrito</Button>
+            <div className='container-detail__info'>
+                <h3 className='info__title'>{product.title}</h3>
+                <p className='info__text'>$ {product.price}</p>
+                <p className='info__subtitle'>TALLE</p>
+                <p className='info__text'>{product.talle}</p>
+                <p className='info__subtitle'>DETALLE</p>
+                <p className='info__text'>{product.description}</p>
+                <Button className='detail__btn-buy'>COMPRAR</Button>
             </div>
             </div>
         </Container>
