@@ -49,21 +49,8 @@ function NavBar(props) {
                     return(
                         page.title === 'Productos' ? (
                         <li>
-                            <Button 
-                                aria-controls={open ? 'basic-menu' : undefined}
-                                aria-haspopup="true"
-                                aria-expanded={open ? 'true' : undefined}
-                                onClick={handleClick}
-                            >{page.title    }</Button>
-                            <Menu
-                                id="basic-menu"
-                                anchorEl={anchorEl}
-                                open={open}
-                                onClose={handleClose}
-                                MenuListProps={{
-                                'aria-labelledby': 'basic-button',
-                                }}
-                            >
+                            <Button variant='contained' aria-controls={open ? 'basic-menu' : undefined}  aria-haspopup="true" aria-expanded={open ? 'true' : undefined} onClick={handleClick}>{page.title}</Button>
+                            <Menu id="basic-menu" anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{'aria-labelledby': 'basic-button',}}>
                                 <MenuItem onClick={handleClose}>
                                     <Link to={'/carros'}>Carros</Link>
                                 </MenuItem>
@@ -77,8 +64,8 @@ function NavBar(props) {
                         </li>
                         ) : (
                         <li>
-                            <Button className="custom-btn" variant="contained">
-                                <Link to={page.url}>{page.title}</Link>
+                            <Button variant="contained">
+                                <Link className='botones' to={page.url}>{page.title}</Link>
                             </Button>
                         </li>
                         )

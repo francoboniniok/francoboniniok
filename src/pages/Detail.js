@@ -1,4 +1,5 @@
 import Container from '@mui/material/Container';
+import './Details.css'
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { useParams } from 'react-router-dom';
@@ -34,7 +35,7 @@ const DetailPage = () => {
         <Container className='container-general'> 
             <div className='container-detail'>
             <div className='container-detail__img'>
-                <img src={`../${product.image}`} alt="jean" />
+                <img src={`../${product.image}`} alt="carro" />
             </div>
             <div className='container-detail__info'>
                 <h3 className='info__title'>{product.title}</h3>

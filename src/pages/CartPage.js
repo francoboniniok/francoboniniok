@@ -1,4 +1,4 @@
-
+import './CartPage.css'
 import {useState, useContext} from 'react'
 import Container from '@mui/material/Container';
 import { Button } from '@mui/material';
@@ -97,7 +97,7 @@ const CartPage = () => {
                 })}
                 
                 <div className='cart-footer'>
-                    <Button className='btn-custom'>Continuar comprando</Button>
+                    <Button variant='contained'>Continuar comprando</Button>
                     <div className='cart-checkout-details'>
                         <div className='cart-checkout__subtotal'>
                             <p>Subtotal</p>
@@ -107,7 +107,7 @@ const CartPage = () => {
                             <p>Total</p>
                             <span>$ {totalPrice}</span>
                         </div>
-                        <Button className='btn-custom' onClick={() => setOpenModal(true)}>Completar Compra</Button>
+                        <Button variant='contained' onClick={() => setOpenModal(true)}>Completar Compra</Button>
                     </div>
                 </div>
             </div>
@@ -123,20 +123,20 @@ const CartPage = () => {
                     <>
                         <h2>FORM USUARIO</h2>
                         <form onSubmit={handleSubmit}>
-                            <input type="text" name='name' placeholder='Nombre' 
+                            <input type="text" name='name' placeholder='Nombre:' 
                                 onChange={handleChange} 
                                 value={formData.name}
                             />
-                            <input type="number" name='phone' placeholder='Telefono' 
+                            <input type="number" name='phone' placeholder='Telefono:' 
                                 onChange={handleChange} 
                                 value={formData.phone}
                             />
-                            <input type="mail" name='email' placeholder='mail' 
+                            <input type="mail" name='email' placeholder='Email:' 
                                 onChange={handleChange} 
                                 value={formData.email}
                             />
 
-                            <Button type="submit">Enviar</Button>
+                            <Button variant='contained' type="submit">Enviar</Button>
                         </form>
                     </>
                 )}

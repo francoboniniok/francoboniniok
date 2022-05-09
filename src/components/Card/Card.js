@@ -48,7 +48,7 @@ export default function Card({ data, action }) {
                     <h2>{title}</h2>
                     <p>Precio : $ {price}</p>
                     <p>Talle : {talle}</p>
-                    <Button onClick={addToCart} className="btn-custom">Comprar</Button>
+                    <button onClick={addToCart} className="buy">Comprar</button>
                 </div>
         </div>
     )

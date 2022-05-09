@@ -13,7 +13,7 @@ export default class NavBarClass extends React.Component {
                 />
                 </div>
                 <ul className='navbar'>
-                    <li><Button className="custom-btn" variant="contained">Home</Button></li>
+                    <li><Button variant="contained">Home</Button></li>
                     <li><Button variant="contained">Productos</Button></li>
                     <li><Button variant="contained">Nosotros</Button></li>
                     <li><Button variant="contained">Contacto</Button></li>

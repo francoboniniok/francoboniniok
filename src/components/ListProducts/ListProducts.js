@@ -51,7 +51,7 @@ const ListProducts = ({children}) => {
 
     return(
         <div className={`container-cards ${lightTheme ? 'light-mode' : ''}`}>
-            <h2> Productos en Oferta </h2>
+            <h2> Productos Destacados</h2>
             {loading ? 
                 (<div className='container-progress'><CircularProgress /></div>) 
             : 
