@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Footer from './components/Footer/Footer';
-import Carousel from './components/Carrousel/Carrousel';
+
 //pages
 import HomePage from './pages/Home'
 import ContactPage from './pages/Contact'
